@@ -1,0 +1,17 @@
+\#*\#
+*~
+*.cache
+*.o
+*.in
+/INSTALL
+/aclocal.m4
+/compile
+/configure
+/install-sh
+/missing
+cutews
+Makefile
+*.status
+*.log
+depcomp
+.deps

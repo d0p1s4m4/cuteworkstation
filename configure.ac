@@ -1,0 +1,15 @@
+AC_INIT([CuteWorkstation], [1.0.0], [], [cuteworkstation])
+
+AM_INIT_AUTOMAKE()
+
+AC_LANG(C)
+AC_PROG_CC
+AC_PROG_CPP
+AM_PROG_CC_C_O
+
+AC_CHECK_INCLUDES_DEFAULT
+
+PKG_CHECK_MODULES([GTK], [gtk+-3.0])
+
+AC_CONFIG_FILES([Makefile src/Makefile])
+AC_OUTPUT

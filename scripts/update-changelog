@@ -1,0 +1,4 @@
+#!/bin/sh
+# -*- mode: sh -*-
+
+sh /usr/share/gnulib/build-aux/gitlog-to-changelog > ChangeLog

@@ -1,0 +1,4 @@
+#!/bin/sh
+# -*- mode: sh -*-
+
+git log --pretty="%aN <%aE>%n%cN <%cE>" | sort | uniq > AUTHORS
