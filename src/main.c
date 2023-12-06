@@ -4,6 +4,12 @@
 #include <gtk/gtk.h>
 #include <vte/vte.h>
 
+#if GLIB_CHECK_VERSION(2, 74, 0)
+# define APP_FLAGS G_APPLICATION_DEFAULT_FLAGS
+#else
+# define APP_FLAGS G_APPLICATION_FLAGS_NONE
+#endif
+
 static char *registers[32] = {
   "x0",  "x1",  "x2",  "x3",  "x4",  "x5",
   "x6",  "x7",  "x8",  "x9",  "x10", "x11",
@@ -204,8 +210,7 @@ main(int argc, char **argv)
   GtkApplication *app;
   int status;
 
-  app = gtk_application_new("engineering.cute.cuteworkstation",
-							G_APPLICATION_DEFAULT_FLAGS);
+  app = gtk_application_new("engineering.cute.cuteworkstation", APP_FLAGS);
 
   g_signal_connect(app, "startup", G_CALLBACK(app_startup), NULL);
   g_signal_connect(app, "activate", G_CALLBACK(app_activate), NULL);
